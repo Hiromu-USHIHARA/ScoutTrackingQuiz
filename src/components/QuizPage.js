@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Text, Button, Image, Modal } from '@mantine/core';
+import { Title, Text, Button, Image } from '@mantine/core';
 
 const QuizPage = ({
   currentQuestion,
@@ -13,17 +13,7 @@ const QuizPage = ({
   onAnswer,
   onNextQuestion
 }) => (
-  <div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: '800px',
-    margin: '40px auto',
-    textAlign: 'center',
-    padding: '2rem 0'
-  }}>
+  <>
     <Title order={1} align="center" mb="xl">
       ボーイスカウト追跡サインクイズ
     </Title>
@@ -42,6 +32,24 @@ const QuizPage = ({
         style={{ margin: '0 auto' }}
       />
     </div>
+
+    {showAnswer && (
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <Button
+          size="lg"
+          onClick={onNextQuestion}
+          style={{
+            width: '300px',
+            height: '80px',
+            fontSize: '1.8rem',
+            fontWeight: 'bold',
+            marginBottom: '1.5rem'
+          }}
+        >
+          {currentQuestion === questions.length - 1 ? '結果を見る' : '次の問題'}
+        </Button>
+      </div>
+    )}
 
     <div style={{ 
       display: 'flex', 
@@ -78,53 +86,26 @@ const QuizPage = ({
       ))}
     </div>
 
-    <Modal
-      opened={showResult}
-      onClose={() => {}}
-      withCloseButton={false}
-      centered
-      size="auto"
-      styles={{
-        body: {
-          textAlign: 'center',
-          padding: '1.5rem 0.5rem',
-          maxHeight: '70vh',
-          overflowY: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }
-      }}
-      classNames={{ body: 'modal-body-scale' }}
-    >
-      <Button
-        size="lg"
-        onClick={onNextQuestion}
-        style={{
-          width: 'min(90vw, 300px)',
-          height: '60px',
-          fontSize: '1.3rem',
-          fontWeight: 'bold',
-          marginBottom: '1rem'
-        }}
-      >
-        {currentQuestion === questions.length - 1 ? '結果を見る' : '次の問題'}
-      </Button>
-      <div
-        style={{
+    {showAnswer && (
+      <div style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: '2rem auto 0 auto'
+      }}>
+        <span style={{
           fontSize: 'min(10rem, 30vw, 30vh)',
           lineHeight: '1',
           color: isCorrect ? '#40C057' : '#FA5252',
-          margin: '0 auto',
           maxWidth: '90vw',
           wordBreak: 'break-all'
-        }}
-      >
-        {isCorrect ? '○' : '×'}
+        }}>
+          {isCorrect ? '○' : '×'}
+        </span>
       </div>
-    </Modal>
-  </div>
+    )}
+  </>
 );
 
 export default QuizPage; 

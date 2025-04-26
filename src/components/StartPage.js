@@ -3,15 +3,13 @@ import { Title, Text, Button } from '@mantine/core';
 
 const StartPage = ({ onStart, questions }) => (
   <div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: '800px',
-    margin: '40px auto',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     textAlign: 'center',
-    padding: '2rem 0'
+    width: '100%',
+    maxWidth: '800px'
   }}>
     <Title 
       order={1} 
