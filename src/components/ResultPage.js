@@ -3,13 +3,16 @@ import { Title, Text, Button } from '@mantine/core';
 
 const ResultPage = ({ score, questions, onBackToStart }) => (
   <div style={{
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh',
     width: '100%',
-    maxWidth: '800px'
+    maxWidth: '800px',
+    margin: '0 auto',
+    textAlign: 'center',
+    padding: '2rem 0'
   }}>
     <Title 
       order={1} 
