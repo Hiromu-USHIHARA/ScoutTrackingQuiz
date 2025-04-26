@@ -53,3 +53,10 @@ img {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 480px) {
+  .modal-body-scale {
+    transform: scale(0.7);
+    transform-origin: top center;
+  }
+}
