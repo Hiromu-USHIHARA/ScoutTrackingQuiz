@@ -46,6 +46,15 @@ const StartPage = ({ onStart, questions }) => (
     >
       クイズを始める
     </Button>
+    <Text />
+    <a
+      href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz.git"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ display: 'block', marginBottom: '2rem', color: '#228be6', fontWeight: 'bold', textDecoration: 'underline' }}
+    >
+      GitHubリポジトリはこちら
+    </a>
   </div>
 );
 
