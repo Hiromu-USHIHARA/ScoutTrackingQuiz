@@ -73,7 +73,7 @@ function App() {
 
   return (
     <AppShell>
-      <Container size="md" py="xl">
+      <Container size="md" py="xl" className="main-scale">
         {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
         {currentPage === 'quiz' && (
           <QuizPage

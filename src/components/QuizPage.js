@@ -77,16 +77,9 @@ const QuizPage = ({
       styles={{
         body: {
           textAlign: 'center',
-          padding: '1.5rem 0.5rem',
-          maxHeight: '70vh',
-          overflowY: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center'
+          padding: '2rem'
         }
       }}
-      classNames={{ body: 'modal-body-scale' }}
     >
       <Button
         size="lg"

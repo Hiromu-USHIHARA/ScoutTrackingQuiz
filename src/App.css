@@ -55,8 +55,8 @@ img {
 }
 
 @media (max-width: 480px) {
-  .modal-body-scale {
-    transform: scale(0.5);
+  .main-scale {
+    transform: scale(0.7);
     transform-origin: top center;
   }
 }
