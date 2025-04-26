@@ -77,9 +77,13 @@ const QuizPage = ({
       styles={{
         body: {
           textAlign: 'center',
-          padding: '2rem',
-          maxHeight: '80vh',
-          overflowY: 'auto'
+          padding: '1.5rem 0.5rem',
+          maxHeight: '70vh',
+          overflowY: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
         }
       }}
     >
@@ -87,20 +91,25 @@ const QuizPage = ({
         size="lg"
         onClick={onNextQuestion}
         style={{
-          width: '300px',
-          height: '80px',
-          fontSize: '1.8rem',
-          fontWeight: 'bold'
+          width: 'min(90vw, 300px)',
+          height: '60px',
+          fontSize: '1.3rem',
+          fontWeight: 'bold',
+          marginBottom: '1rem'
         }}
       >
         {currentQuestion === questions.length - 1 ? '結果を見る' : '次の問題'}
       </Button>
-      <div style={{
-        fontSize: '15rem',
-        lineHeight: '1',
-        color: isCorrect ? '#40C057' : '#FA5252',
-        marginBottom: '2rem'
-      }}>
+      <div
+        style={{
+          fontSize: 'min(10rem, 30vw, 30vh)',
+          lineHeight: '1',
+          color: isCorrect ? '#40C057' : '#FA5252',
+          margin: '0 auto',
+          maxWidth: '90vw',
+          wordBreak: 'break-all'
+        }}
+      >
         {isCorrect ? '○' : '×'}
       </div>
     </Modal>
