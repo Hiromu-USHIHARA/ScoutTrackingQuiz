@@ -77,7 +77,9 @@ const QuizPage = ({
       styles={{
         body: {
           textAlign: 'center',
-          padding: '2rem'
+          padding: '2rem',
+          maxHeight: '80vh',
+          overflowY: 'auto'
         }
       }}
     >
