@@ -2,6 +2,10 @@
 
 ボーイスカウトの追跡サインの意味を当てるクイズアプリです。
 
+![アプリ画面サンプル](./ScoutTrackingQuizSnapshot.png)
+
+> ※クイズ内で使用している画像はすべてChatGPTを使って生成しています。
+
 ## デプロイURL
 
 [https://scout-tracking-quiz-hiromu-ushiharas-projects.vercel.app/](https://scout-tracking-quiz-hiromu-ushiharas-projects.vercel.app/)
