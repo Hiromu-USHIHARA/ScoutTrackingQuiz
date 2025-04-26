@@ -55,8 +55,10 @@ img {
 }
 
 @media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
   .main-scale {
-    transform: scale(0.7);
-    transform-origin: top center;
+    transform: none;
   }
 }
