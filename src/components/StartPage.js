@@ -7,10 +7,9 @@ const StartPage = ({ onStart, questions }) => (
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '100vh',
     width: '100%',
     maxWidth: '800px',
-    margin: '0 auto',
+    margin: '40px auto',
     textAlign: 'center',
     padding: '2rem 0'
   }}>
