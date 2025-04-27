@@ -26,7 +26,7 @@ function App() {
   const NUM_QUESTIONS = 5;
 
   const startQuiz = () => {
-    // 問題をシャッフルして2問選択
+    // 問題をシャッフルしてNUM_QUESTIONS問選択
     const shuffled = shuffleArray([...questions]).slice(0, NUM_QUESTIONS);
     setSelectedQuestions(shuffled);
     setShuffledOptions(shuffleArray([...shuffled[0].options]));
