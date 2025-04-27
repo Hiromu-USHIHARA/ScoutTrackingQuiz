@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import { AppShell, Container } from '@mantine/core';
 import './App.css';
 
-// 画像のインポート
-import toRight1 from './assets/images/toRight1.png';
-import toRight2 from './assets/images/toRight2.png';
-import thisWay1 from './assets/images/thisWay1.png';
-import notThisWay1 from './assets/images/notThisWay1.png';
-
 // コンポーネントのインポート
 import StartPage from './components/StartPage';
 import QuizPage from './components/QuizPage';
