@@ -29,7 +29,7 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [shuffledOptions, setShuffledOptions] = useState([]);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
-  const NUM_QUESTIONS = 2;
+  const NUM_QUESTIONS = 10;
 
   const startQuiz = () => {
     // 問題をシャッフルして2問選択
