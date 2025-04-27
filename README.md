@@ -44,3 +44,5 @@ npm start
 - 選択肢もランダムに表示
 - 正解/不正解の表示
 - スコアの記録
+
+> ※詳細な仕様については[specification.md](./specification.md)を参照してください。
