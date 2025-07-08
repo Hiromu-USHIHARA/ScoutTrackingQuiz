@@ -26,7 +26,7 @@ const QuizPage = ({
       <Image
         src={questions[currentQuestion].image}
         alt="追跡サイン"
-        height="clamp(80px, 15vh, 150px)"
+        height="20vh"
         fit="contain"
         style={{ margin: '0 auto' }}
       />
