@@ -13,6 +13,7 @@ import notThisWay1 from '../assets/notThisWay1.png';
 import notThisWay2 from '../assets/notThisWay2.png';
 import danger1 from '../assets/danger1.png';
 import danger2 from '../assets/danger2.png';
+import danger3 from '../assets/danger3.png';
 import goBack from '../assets/goBack.png';
 import message3step from '../assets/message3step.png';
 
@@ -91,6 +92,11 @@ export const questions = [
     image: danger2,
     correctAnswer: '危険',
     options: ['危険', '3歩先に通信あり', '右に進め']
+  },
+  {
+    image: danger3,
+    correctAnswer: '危険',
+    options: ['危険', 'この道を進め', '左に進め']
   },
   {
     image: goBack,
