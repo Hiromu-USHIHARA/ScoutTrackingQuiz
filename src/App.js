@@ -66,48 +66,44 @@ function App() {
   };
 
   return (
-    <AppShell
-      footer={{
-        height: 60,
-      }}
-      footerComponent={() => (
-        <footer className="app-footer">
-          <p>
-            <a href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz">
-              <img src="https://img.shields.io/github/stars/Hiromu-USHIHARA/ScoutTrackingQuiz?style=social" alt="GitHub Repository" />
-            </a>
-            <br />
-            designed by{' '}
-            <a href="https://github.com/Hiromu-USHIHARA">Hiromu Ushihara</a>
-          </p>
-        </footer>
-      )}
-    >
-      <Container size="md" py="xl" className="main-scale">
-        {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
-        {currentPage === 'quiz' && (
-          <QuizPage
-            currentQuestion={currentQuestion}
-            questions={selectedQuestions}
-            shuffledOptions={shuffledOptions}
-            score={score}
-            showAnswer={showAnswer}
-            selectedAnswer={selectedAnswer}
-            showResult={showResult}
-            isCorrect={isCorrect}
-            onAnswer={handleAnswer}
-            onNextQuestion={nextQuestion}
-          />
-        )}
-        {currentPage === 'result' && (
-          <ResultPage
-            score={score}
-            questions={selectedQuestions}
-            onBackToStart={backToStart}
-          />
-        )}
-      </Container>
-    </AppShell>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1 }}>
+        <Container size="md" py="xl" className="main-scale">
+          {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
+          {currentPage === 'quiz' && (
+            <QuizPage
+              currentQuestion={currentQuestion}
+              questions={selectedQuestions}
+              shuffledOptions={shuffledOptions}
+              score={score}
+              showAnswer={showAnswer}
+              selectedAnswer={selectedAnswer}
+              showResult={showResult}
+              isCorrect={isCorrect}
+              onAnswer={handleAnswer}
+              onNextQuestion={nextQuestion}
+            />
+          )}
+          {currentPage === 'result' && (
+            <ResultPage
+              score={score}
+              questions={selectedQuestions}
+              onBackToStart={backToStart}
+            />
+          )}
+        </Container>
+      </div>
+      <footer className="app-footer">
+        <p>
+          <a href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz">
+            <img src="https://img.shields.io/github/stars/Hiromu-USHIHARA/ScoutTrackingQuiz?style=social" alt="GitHub Repository" />
+          </a>
+          <br />
+          designed by{' '}
+          <a href="https://github.com/Hiromu-USHIHARA">Hiromu Ushihara</a>
+        </p>
+      </footer>
+    </div>
   );
 }
 
