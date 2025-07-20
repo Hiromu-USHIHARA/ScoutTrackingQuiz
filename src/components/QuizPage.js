@@ -1,5 +1,5 @@
-import React from 'react';
-import { Title, Text, Button, Image } from '@mantine/core';
+import { Button, Image, Text, Title } from '@mantine/core';
+import ProgressBar from './ProgressBar';
 
 const QuizPage = ({
   currentQuestion,
@@ -8,12 +8,20 @@ const QuizPage = ({
   score,
   showAnswer,
   selectedAnswer,
-  showResult,
+  // showResult,
   isCorrect,
+  correctAnswers,
   onAnswer,
   onNextQuestion
 }) => (
   <>
+    {/* プログレスバー */}
+    <ProgressBar
+      currentQuestion={currentQuestion}
+      totalQuestions={questions.length}
+      correctAnswers={correctAnswers}
+    />
+    
     <Title order={1} align="center" mb="xl">
       ボーイスカウト追跡サインクイズ
     </Title>
@@ -65,9 +73,9 @@ const QuizPage = ({
       marginTop: '2rem',
       flexWrap: 'wrap'
     }}>
-      {shuffledOptions.map((option, index) => (
+      {shuffledOptions.map((option) => (
         <Button
-          key={index}
+          key={option}
           size="lg"
           variant="filled"
           color={showAnswer ? 

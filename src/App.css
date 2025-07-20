@@ -1,3 +1,36 @@
+/* UDフォントの定義 */
+@font-face {
+  font-family: 'BIZ UD Gothic';
+  src: url('../public/fonts/BIZUDGothic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BIZ UD Gothic';
+  src: url('../public/fonts/BIZUDGothic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BIZ UD Mincho';
+  src: url('../public/fonts/BIZUDMincho-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BIZ UD Mincho';
+  src: url('../public/fonts/BIZUDMincho-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 .App {
   text-align: center;
 }
@@ -6,6 +39,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f0f2f5;
+  font-family: 'BIZ UD Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-weight: normal;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {
@@ -52,6 +90,28 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.app-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 480px) {

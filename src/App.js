@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
-import { AppShell, Container } from '@mantine/core';
+import { Container } from '@mantine/core';
+import { useState } from 'react';
 import './App.css';
-
-// コンポーネントのインポート
-import StartPage from './components/StartPage';
 import QuizPage from './components/QuizPage';
 import ResultPage from './components/ResultPage';
-
-// ユーティリティのインポート
-import { shuffleArray } from './utils/shuffle';
-
-// データのインポート
+import StartPage from './components/StartPage';
 import { questions } from './data/questions';
+import { shuffleArray } from './utils/shuffle';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('start');
@@ -23,6 +17,7 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [shuffledOptions, setShuffledOptions] = useState([]);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState([]);
   const NUM_QUESTIONS = 5;
 
   const startQuiz = () => {
@@ -36,6 +31,7 @@ function App() {
     setShowAnswer(false);
     setSelectedAnswer(null);
     setShowResult(false);
+    setCorrectAnswers([]);
   };
 
   const nextQuestion = () => {
@@ -56,6 +52,12 @@ function App() {
     const correct = answer === selectedQuestions[currentQuestion].correctAnswer;
     setIsCorrect(correct);
     setShowResult(true);
+    
+    // 正解の記録を更新
+    const newCorrectAnswers = [...correctAnswers];
+    newCorrectAnswers[currentQuestion] = correct;
+    setCorrectAnswers(newCorrectAnswers);
+    
     if (correct) {
       setScore(score + 1);
     }
@@ -66,32 +68,45 @@ function App() {
   };
 
   return (
-    <AppShell>
-      <Container size="md" py="xl" className="main-scale">
-        {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
-        {currentPage === 'quiz' && (
-          <QuizPage
-            currentQuestion={currentQuestion}
-            questions={selectedQuestions}
-            shuffledOptions={shuffledOptions}
-            score={score}
-            showAnswer={showAnswer}
-            selectedAnswer={selectedAnswer}
-            showResult={showResult}
-            isCorrect={isCorrect}
-            onAnswer={handleAnswer}
-            onNextQuestion={nextQuestion}
-          />
-        )}
-        {currentPage === 'result' && (
-          <ResultPage
-            score={score}
-            questions={selectedQuestions}
-            onBackToStart={backToStart}
-          />
-        )}
-      </Container>
-    </AppShell>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1 }}>
+        <Container size="md" py="xl" className="main-scale">
+          {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
+          {currentPage === 'quiz' && (
+            <QuizPage
+              currentQuestion={currentQuestion}
+              questions={selectedQuestions}
+              shuffledOptions={shuffledOptions}
+              score={score}
+              showAnswer={showAnswer}
+              selectedAnswer={selectedAnswer}
+              showResult={showResult}
+              isCorrect={isCorrect}
+              correctAnswers={correctAnswers}
+              onAnswer={handleAnswer}
+              onNextQuestion={nextQuestion}
+            />
+          )}
+          {currentPage === 'result' && (
+            <ResultPage
+              score={score}
+              questions={selectedQuestions}
+              onBackToStart={backToStart}
+            />
+          )}
+        </Container>
+      </div>
+      <footer className="app-footer">
+        <p>
+          <a href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz">
+            <img src="https://img.shields.io/github/stars/Hiromu-USHIHARA/ScoutTrackingQuiz?style=social" alt="GitHub Repository" />
+          </a>
+          <br />
+          designed by{' '}
+          <a href="https://github.com/Hiromu-USHIHARA">Hiromu Ushihara</a>
+        </p>
+      </footer>
+    </div>
   );
 }
 

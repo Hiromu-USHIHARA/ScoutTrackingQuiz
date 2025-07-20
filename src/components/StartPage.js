@@ -1,7 +1,6 @@
-import React from 'react';
-import { Title, Text, Button } from '@mantine/core';
+import { Button, Text, Title } from '@mantine/core';
 
-const StartPage = ({ onStart, questions }) => (
+const StartPage = ({ onStart }) => (
   <div style={{
     position: 'absolute',
     top: '50%',
@@ -47,14 +46,14 @@ const StartPage = ({ onStart, questions }) => (
       クイズを始める
     </Button>
     <Text />
-    <a
+    {/* <a
       href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz.git"
       target="_blank"
       rel="noopener noreferrer"
       style={{ display: 'block', marginBottom: '2rem', color: '#228be6', fontWeight: 'bold', textDecoration: 'underline' }}
     >
       GitHubリポジトリはこちら
-    </a>
+    </a> */}
   </div>
 );
 

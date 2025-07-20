@@ -1,5 +1,4 @@
-import React from 'react';
-import { Title, Text, Button } from '@mantine/core';
+import { Button, Text, Title } from '@mantine/core';
 
 const ResultPage = ({ score, questions, onBackToStart }) => (
   <div style={{
