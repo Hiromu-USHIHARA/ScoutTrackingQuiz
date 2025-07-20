@@ -1,5 +1,4 @@
-import React from 'react';
-import { Title, Text, Button, Image } from '@mantine/core';
+import { Button, Image, Text, Title } from '@mantine/core';
 
 const QuizPage = ({
   currentQuestion,
@@ -8,7 +7,7 @@ const QuizPage = ({
   score,
   showAnswer,
   selectedAnswer,
-  showResult,
+  // showResult,
   isCorrect,
   onAnswer,
   onNextQuestion
@@ -65,9 +64,9 @@ const QuizPage = ({
       marginTop: '2rem',
       flexWrap: 'wrap'
     }}>
-      {shuffledOptions.map((option, index) => (
+      {shuffledOptions.map((option) => (
         <Button
-          key={index}
+          key={option}
           size="lg"
           variant="filled"
           color={showAnswer ? 

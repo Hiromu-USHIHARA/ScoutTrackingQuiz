@@ -1,7 +1,6 @@
-import React from 'react';
-import { Title, Text, Button } from '@mantine/core';
+import { Button, Text, Title } from '@mantine/core';
 
-const StartPage = ({ onStart, questions }) => (
+const StartPage = ({ onStart }) => (
   <div style={{
     position: 'absolute',
     top: '50%',

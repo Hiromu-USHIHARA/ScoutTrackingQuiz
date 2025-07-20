@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
-import { AppShell, Container } from '@mantine/core';
+import { Container } from '@mantine/core';
+import { useState } from 'react';
 import './App.css';
-
-// コンポーネントのインポート
-import StartPage from './components/StartPage';
 import QuizPage from './components/QuizPage';
 import ResultPage from './components/ResultPage';
-
-// ユーティリティのインポート
-import { shuffleArray } from './utils/shuffle';
-
-// データのインポート
+import StartPage from './components/StartPage';
 import { questions } from './data/questions';
+import { shuffleArray } from './utils/shuffle';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('start');
