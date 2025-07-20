@@ -54,6 +54,28 @@ img {
   }
 }
 
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.app-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 480px) {
   html {
     font-size: 12px;
