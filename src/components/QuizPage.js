@@ -1,4 +1,5 @@
 import { Button, Image, Text, Title } from '@mantine/core';
+import ProgressBar from './ProgressBar';
 
 const QuizPage = ({
   currentQuestion,
@@ -9,10 +10,18 @@ const QuizPage = ({
   selectedAnswer,
   // showResult,
   isCorrect,
+  correctAnswers,
   onAnswer,
   onNextQuestion
 }) => (
   <>
+    {/* プログレスバー */}
+    <ProgressBar
+      currentQuestion={currentQuestion}
+      totalQuestions={questions.length}
+      correctAnswers={correctAnswers}
+    />
+    
     <Title order={1} align="center" mb="xl">
       ボーイスカウト追跡サインクイズ
     </Title>

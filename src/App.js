@@ -17,6 +17,7 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [shuffledOptions, setShuffledOptions] = useState([]);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState([]);
   const NUM_QUESTIONS = 5;
 
   const startQuiz = () => {
@@ -30,6 +31,7 @@ function App() {
     setShowAnswer(false);
     setSelectedAnswer(null);
     setShowResult(false);
+    setCorrectAnswers([]);
   };
 
   const nextQuestion = () => {
@@ -50,6 +52,12 @@ function App() {
     const correct = answer === selectedQuestions[currentQuestion].correctAnswer;
     setIsCorrect(correct);
     setShowResult(true);
+    
+    // 正解の記録を更新
+    const newCorrectAnswers = [...correctAnswers];
+    newCorrectAnswers[currentQuestion] = correct;
+    setCorrectAnswers(newCorrectAnswers);
+    
     if (correct) {
       setScore(score + 1);
     }
@@ -74,6 +82,7 @@ function App() {
               selectedAnswer={selectedAnswer}
               showResult={showResult}
               isCorrect={isCorrect}
+              correctAnswers={correctAnswers}
               onAnswer={handleAnswer}
               onNextQuestion={nextQuestion}
             />
