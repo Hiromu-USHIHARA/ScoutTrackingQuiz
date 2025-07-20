@@ -70,6 +70,18 @@ function App() {
       footer={{
         height: 60,
       }}
+      footerComponent={() => (
+        <footer className="app-footer">
+          <p>
+            <a href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz">
+              <img src="https://img.shields.io/github/stars/Hiromu-USHIHARA/ScoutTrackingQuiz?style=social" alt="GitHub Repository" />
+            </a>
+            <br />
+            designed by{' '}
+            <a href="https://github.com/Hiromu-USHIHARA">Hiromu Ushihara</a>
+          </p>
+        </footer>
+      )}
     >
       <Container size="md" py="xl" className="main-scale">
         {currentPage === 'start' && <StartPage onStart={startQuiz} questions={selectedQuestions} />}
@@ -95,16 +107,6 @@ function App() {
           />
         )}
       </Container>
-      <footer className="app-footer">
-        <p>
-          <a href="https://github.com/Hiromu-USHIHARA/ScoutTrackingQuiz">
-            <img src="https://img.shields.io/github/stars/Hiromu-USHIHARA/ScoutTrackingQuiz?style=social" alt="GitHub Repository" />
-          </a>
-          <br />
-          designed by{' '}
-          <a href="https://github.com/Hiromu-USHIHARA">Hiromu Ushihara</a>
-        </p>
-      </footer>
     </AppShell>
   );
 }
